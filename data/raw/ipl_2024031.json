@@ -1,0 +1,2684 @@
+{
+  "info": {
+    "season": "2024",
+    "city": "Dharamshala",
+    "venue": "HPCA Stadium, Dharamshala",
+    "teams": [
+      "Mumbai Indians",
+      "Delhi Capitals"
+    ],
+    "toss": {
+      "winner": "Mumbai Indians",
+      "decision": "bat"
+    },
+    "outcome": {
+      "winner": "Delhi Capitals",
+      "by": {
+        "wickets": 8
+      }
+    },
+    "players": {
+      "Mumbai Indians": [
+        "Rohit Sharma",
+        "Ishan Kishan",
+        "Suryakumar Yadav",
+        "Tilak Varma",
+        "Hardik Pandya",
+        "Tim David",
+        "Naman Dhir",
+        "Mohammad Nabi",
+        "Piyush Chawla",
+        "Jasprit Bumrah",
+        "Gerald Coetzee"
+      ],
+      "Delhi Capitals": [
+        "Prithvi Shaw",
+        "Jake Fraser-McGurk",
+        "Abishek Porel",
+        "Rishabh Pant",
+        "Tristan Stubbs",
+        "Axar Patel",
+        "Kumar Kushagra",
+        "Kuldeep Yadav",
+        "Mukesh Kumar",
+        "Khaleel Ahmed",
+        "Ishant Sharma"
+      ]
+    }
+  },
+  "innings": [
+    {
+      "team": "Mumbai Indians",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Rohit Sharma"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Ishan Kishan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kumar Kushagra",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Suryakumar Yadav"
+                }
+              ]
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Tilak Varma"
+                }
+              ]
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Hardik Pandya"
+                }
+              ]
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Tim David",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tim David",
+              "bowler": "Ishant Sharma",
+              "non_striker": "Naman Dhir",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Tim David"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Mukesh Kumar",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Khaleel Ahmed",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "deliveries": [
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Naman Dhir",
+              "bowler": "Kuldeep Yadav",
+              "non_striker": "Mohammad Nabi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "team": "Delhi Capitals",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Prithvi Shaw",
+              "bowler": "Naman Dhir",
+              "non_striker": "Jake Fraser-McGurk",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Prithvi Shaw"
+                }
+              ]
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Naman Dhir",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Jake Fraser-McGurk",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Abishek Porel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Jake Fraser-McGurk"
+                }
+              ]
+            },
+            {
+              "batter": "Abishek Porel",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Rishabh Pant",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abishek Porel",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Rishabh Pant",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abishek Porel",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Rishabh Pant",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abishek Porel",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Rishabh Pant",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abishek Porel",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Rishabh Pant",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Abishek Porel",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Rishabh Pant",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abishek Porel",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Rishabh Pant",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

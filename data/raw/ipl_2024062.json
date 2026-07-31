@@ -1,0 +1,2848 @@
+{
+  "info": {
+    "season": "2024",
+    "city": "Bengaluru",
+    "venue": "M. Chinnaswamy Stadium, Bengaluru",
+    "teams": [
+      "Chennai Super Kings",
+      "Mumbai Indians"
+    ],
+    "toss": {
+      "winner": "Chennai Super Kings",
+      "decision": "field"
+    },
+    "outcome": {
+      "winner": "Mumbai Indians",
+      "by": {
+        "wickets": 6
+      }
+    },
+    "players": {
+      "Chennai Super Kings": [
+        "Ruturaj Gaikwad",
+        "Devon Conway",
+        "Shivam Dube",
+        "MS Dhoni",
+        "Ravindra Jadeja",
+        "Daryl Mitchell",
+        "Sameer Rizvi",
+        "Moeen Ali",
+        "Deepak Chahar",
+        "Tushar Deshpande",
+        "Matheesha Pathirana"
+      ],
+      "Mumbai Indians": [
+        "Rohit Sharma",
+        "Ishan Kishan",
+        "Suryakumar Yadav",
+        "Tilak Varma",
+        "Hardik Pandya",
+        "Tim David",
+        "Naman Dhir",
+        "Mohammad Nabi",
+        "Piyush Chawla",
+        "Jasprit Bumrah",
+        "Gerald Coetzee"
+      ]
+    }
+  },
+  "innings": [
+    {
+      "team": "Chennai Super Kings",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Ruturaj Gaikwad",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Devon Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ruturaj Gaikwad",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Devon Conway",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ruturaj Gaikwad",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Devon Conway",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Ruturaj Gaikwad"
+                }
+              ]
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Piyush Chawla",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Gerald Coetzee",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Naman Dhir",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Naman Dhir",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Naman Dhir",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Naman Dhir",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Naman Dhir",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Devon Conway",
+              "bowler": "Naman Dhir",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "Devon Conway",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Shivam Dube",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Devon Conway"
+                }
+              ]
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Piyush Chawla",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Naman Dhir",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Naman Dhir",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Naman Dhir",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Naman Dhir",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Naman Dhir",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Naman Dhir",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shivam Dube",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "MS Dhoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Shivam Dube"
+                }
+              ]
+            },
+            {
+              "batter": "MS Dhoni",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Ravindra Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "MS Dhoni"
+                }
+              ]
+            },
+            {
+              "batter": "Ravindra Jadeja",
+              "bowler": "Mohammad Nabi",
+              "non_striker": "Daryl Mitchell",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "deliveries": [
+            {
+              "batter": "Ravindra Jadeja",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Daryl Mitchell",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ravindra Jadeja",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Daryl Mitchell",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ravindra Jadeja",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Daryl Mitchell",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ravindra Jadeja",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Daryl Mitchell",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ravindra Jadeja",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Daryl Mitchell",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ravindra Jadeja",
+              "bowler": "Jasprit Bumrah",
+              "non_striker": "Daryl Mitchell",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "team": "Mumbai Indians",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rohit Sharma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Ishan Kishan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Rohit Sharma"
+                }
+              ]
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Ishan Kishan",
+              "bowler": "Moeen Ali",
+              "non_striker": "Suryakumar Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Ishan Kishan"
+                }
+              ]
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Suryakumar Yadav",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Tilak Varma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Suryakumar Yadav"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Sameer Rizvi",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Matheesha Pathirana",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Deepak Chahar",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Deepak Chahar",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Deepak Chahar",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Deepak Chahar",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Deepak Chahar",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Deepak Chahar",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Moeen Ali",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Moeen Ali",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Tilak Varma",
+              "bowler": "Moeen Ali",
+              "non_striker": "Hardik Pandya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Tilak Varma"
+                }
+              ]
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Tushar Deshpande",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Hardik Pandya",
+              "bowler": "Moeen Ali",
+              "non_striker": "Tim David",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
