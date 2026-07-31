@@ -1,0 +1,2887 @@
+{
+  "info": {
+    "season": "2024",
+    "city": "Bengaluru",
+    "venue": "M. Chinnaswamy Stadium, Bengaluru",
+    "teams": [
+      "Sunrisers Hyderabad",
+      "Gujarat Titans"
+    ],
+    "toss": {
+      "winner": "Sunrisers Hyderabad",
+      "decision": "field"
+    },
+    "outcome": {
+      "winner": "Gujarat Titans",
+      "by": {
+        "wickets": 6
+      }
+    },
+    "players": {
+      "Sunrisers Hyderabad": [
+        "Travis Head",
+        "Abhishek Sharma",
+        "Aiden Markram",
+        "Heinrich Klaasen",
+        "Nitish Kumar Reddy",
+        "Abdul Samad",
+        "Shahbaz Ahmed",
+        "Pat Cummins",
+        "Bhuvaneshwar Kumar",
+        "Jaydev Unadkat",
+        "T Natarajan"
+      ],
+      "Gujarat Titans": [
+        "Shubman Gill",
+        "Sai Sudharsan",
+        "Shahrukh Khan",
+        "David Miller",
+        "Rahul Tewatia",
+        "Rashid Khan",
+        "Vijay Shankar",
+        "Noor Ahmad",
+        "Mohit Sharma",
+        "Umesh Yadav",
+        "Spencer Johnson"
+      ]
+    }
+  },
+  "innings": [
+    {
+      "team": "Sunrisers Hyderabad",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Travis Head",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Abhishek Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Travis Head",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Abhishek Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Travis Head",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Abhishek Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Travis Head",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Abhishek Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Travis Head",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Abhishek Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Travis Head",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Abhishek Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Travis Head"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Abhishek Sharma",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Aiden Markram",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Abhishek Sharma"
+                }
+              ]
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Mohit Sharma",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Mohit Sharma",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Mohit Sharma",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Mohit Sharma",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Mohit Sharma",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Mohit Sharma",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Noor Ahmad",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Spencer Johnson",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "deliveries": [
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Aiden Markram",
+              "bowler": "Vijay Shankar",
+              "non_striker": "Heinrich Klaasen",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "team": "Gujarat Titans",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Shubman Gill",
+              "bowler": "Pat Cummins",
+              "non_striker": "Sai Sudharsan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shubman Gill",
+              "bowler": "Pat Cummins",
+              "non_striker": "Sai Sudharsan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shubman Gill",
+              "bowler": "Pat Cummins",
+              "non_striker": "Sai Sudharsan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shubman Gill",
+              "bowler": "Pat Cummins",
+              "non_striker": "Sai Sudharsan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Shubman Gill"
+                }
+              ]
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "Pat Cummins",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Sai Sudharsan",
+              "bowler": "T Natarajan",
+              "non_striker": "Shahrukh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Sai Sudharsan"
+                }
+              ]
+            },
+            {
+              "batter": "Shahrukh Khan",
+              "bowler": "T Natarajan",
+              "non_striker": "David Miller",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Shahrukh Khan",
+              "bowler": "T Natarajan",
+              "non_striker": "David Miller",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Shahrukh Khan"
+                }
+              ]
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "T Natarajan",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "T Natarajan",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "T Natarajan",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Bhuvaneshwar Kumar",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            },
+            {
+              "batter": "David Miller",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rahul Tewatia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "David Miller"
+                }
+              ]
+            },
+            {
+              "batter": "Rahul Tewatia",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rashid Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rahul Tewatia",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rashid Khan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rahul Tewatia",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rashid Khan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rahul Tewatia",
+              "bowler": "Jaydev Unadkat",
+              "non_striker": "Rashid Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": []
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "deliveries": [
+            {
+              "batter": "Rahul Tewatia",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rashid Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": []
+            },
+            {
+              "batter": "Rahul Tewatia",
+              "bowler": "Pat Cummins",
+              "non_striker": "Rashid Khan",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "wickets": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
