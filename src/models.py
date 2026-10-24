@@ -1,226 +1,379 @@
 import os
+import json
 import pickle
+from functools import lru_cache
+
 import numpy as np
 import pandas as pd
-import duckdb
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import log_loss, accuracy_score
-from sklearn.ensemble import RandomForestRegressor
-import xgboost as xgb
 import shap
+import xgboost as xgb
+from sklearn.cluster import KMeans
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.metrics import (
+    accuracy_score, brier_score_loss, log_loss, mean_absolute_error, mean_squared_error,
+    roc_auc_score, silhouette_score,
+)
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
-from src.etl import DEFAULT_DB_PATH, get_connection
+from src.config import FORMATS, model_path, phase_case_sql, total_balls
+from src.etl import get_connection
 
-MODEL_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
-WIN_MODEL_PATH = os.path.join(MODEL_DIR, "win_model.pkl")
-AUCTION_MODEL_PATH = os.path.join(MODEL_DIR, "auction_model.pkl")
+WIN_FEATURES = ["runs_needed", "balls_left", "wickets_left", "req_rr", "curr_rr", "target_runs"]
+SCORE_FEATURES = ["balls_bowled", "runs", "wickets", "run_rate"]
+CLUSTER_FEATURES = ["strike_rate", "average", "boundary_pct", "dot_pct", "powerplay_share", "death_share"]
 
-FEATURE_NAMES = [
-    "runs_needed",
-    "balls_left",
-    "wickets_left",
-    "req_rr",
-    "curr_rr",
-    "target_runs",
-    "venue_avg_runs",
-    "toss_win_bat_first"
-]
+# Share of matches (by date) held out as the test set
+TEST_FRACTION = 0.2
+# How much lower XGBoost's test log loss must be before it replaces the logistic regression baseline
+MIN_LOG_LOSS_GAIN = 0.005
 
-def build_training_dataset(db_path=DEFAULT_DB_PATH):
-    """Builds a dataset of second-innings states from DuckDB for win probability model training."""
-    con = get_connection(db_path)
-    
-    query = """
-    SELECT 
-        d.match_id,
-        d.over,
-        d.ball,
-        d.runs_batter,
-        d.runs_extras,
-        d.total_runs,
-        d.is_wicket,
-        m.team1,
-        m.team2,
-        m.toss_winner,
-        m.toss_decision,
-        m.winner,
-        m.target_runs,
-        m.venue
-    FROM deliveries d
-    JOIN matches m ON d.match_id = m.match_id
-    WHERE d.innings = 2 AND m.target_runs > 0
-    ORDER BY d.match_id, d.over, d.ball
-    """
-    df = con.execute(query).df()
-    con.close()
 
-    if df.empty:
-        # Fallback synthetic training frame if database is empty
-        return generate_synthetic_training_data()
+def _query(sql, params, path=None):
+    con = get_connection(path, read_only=True)
+    try:
+        return con.execute(sql, params).df()
+    finally:
+        con.close()
 
-    # Aggregate state per delivery
-    rows = []
-    for match_id, match_group in df.groupby('match_id'):
-        target = match_group['target_runs'].iloc[0]
-        winner = match_group['winner'].iloc[0]
-        toss_w = match_group['toss_winner'].iloc[0]
-        toss_d = match_group['toss_decision'].iloc[0]
-        team2 = match_group['team2'].iloc[0] # Usually batting 2nd
-        
-        cum_runs = 0
-        cum_wickets = 0
-        balls_bowled = 0
 
-        batting_team_won = 1 if winner == team2 else 0
-        toss_win_bat_first = 1 if (toss_w == team2 and toss_d == "field") else 0
+def _time_split(df):
+    """Train on older matches, test on the most recent ones (no match appears in both)."""
+    match_dates = df.groupby("match_id")["start_date"].first().sort_values()
+    cutoff_idx = int(len(match_dates) * (1 - TEST_FRACTION))
+    test_ids = set(match_dates.index[cutoff_idx:])
+    is_test = df["match_id"].isin(test_ids)
+    return df[~is_test], df[is_test], str(match_dates.iloc[cutoff_idx].date())
 
-        for _, row in match_group.iterrows():
-            cum_runs += row['total_runs']
-            if row['is_wicket'] == 1:
-                cum_wickets += 1
-            balls_bowled += 1
 
-            runs_needed = max(target - cum_runs, 0)
-            balls_left = max(120 - balls_bowled, 0)
-            wickets_left = max(10 - cum_wickets, 0)
+# ---------------- Win probability (second innings) ----------------
 
-            curr_rr = (cum_runs / balls_bowled) * 6.0 if balls_bowled > 0 else 0.0
-            req_rr = (runs_needed / balls_left) * 6.0 if balls_left > 0 else 36.0
+def build_chase_dataset(fmt, path=None):
+    """One row per legal ball of completed, full-length chases: the scoreboard state and whether the chase won."""
+    df = _query("""
+        WITH states AS (
+            SELECT d.match_id, m.start_date, m.target_runs, d.is_legal, d.legal_ball_no,
+                   SUM(d.total_runs) OVER w AS runs,
+                   SUM(d.is_wicket) OVER w AS wickets,
+                   CASE WHEN m.winner = d.batting_team THEN 1 ELSE 0 END AS label
+            FROM deliveries d JOIN matches m USING (match_id)
+            WHERE m.format = ? AND d.innings = 2 AND m.result = 'normal' AND m.method = ''
+              AND m.target_runs > 0 AND m.scheduled_overs = ?
+              AND (m.target_overs IS NULL OR m.target_overs = m.scheduled_overs)
+            WINDOW w AS (PARTITION BY d.match_id ORDER BY d.over, d.ball ROWS UNBOUNDED PRECEDING)
+        )
+        SELECT * FROM states WHERE is_legal
+    """, [fmt, FORMATS[fmt]["overs"]], path)
 
-            rows.append({
-                "runs_needed": runs_needed,
-                "balls_left": balls_left,
-                "wickets_left": wickets_left,
-                "req_rr": req_rr,
-                "curr_rr": curr_rr,
-                "target_runs": target,
-                "venue_avg_runs": 175.0, # Baseline venue total
-                "toss_win_bat_first": toss_win_bat_first,
-                "label": batting_team_won
-            })
+    n_balls = total_balls(fmt)
+    df["runs_needed"] = df["target_runs"] - df["runs"]
+    df["balls_left"] = n_balls - df["legal_ball_no"]
+    df["wickets_left"] = 10 - df["wickets"]
+    df = df[(df["runs_needed"] > 0) & (df["balls_left"] > 0) & (df["wickets_left"] > 0)].copy()
+    df["req_rr"] = df["runs_needed"] / df["balls_left"] * 6
+    df["curr_rr"] = df["runs"] / df["legal_ball_no"] * 6
+    return df
 
-    return pd.DataFrame(rows)
 
-def generate_synthetic_training_data(n_samples=2500):
-    """Generates synthetic delivery states for model training validation."""
-    np.random.seed(42)
-    balls_left = np.random.randint(1, 121, n_samples)
-    wickets_left = np.random.randint(1, 11, n_samples)
-    target_runs = np.random.randint(140, 220, n_samples)
-    
-    # Estimate reasonable runs scored so far
-    fraction_done = (120 - balls_left) / 120.0
-    expected_runs = target_runs * fraction_done
-    actual_runs = expected_runs + np.random.normal(0, 15, n_samples)
-    actual_runs = np.clip(actual_runs, 0, target_runs + 20)
-    
-    runs_needed = np.clip(target_runs - actual_runs, 0, 220)
-    curr_rr = np.where(120 - balls_left > 0, (actual_runs / (120 - balls_left)) * 6.0, 0.0)
-    req_rr = np.where(balls_left > 0, (runs_needed / balls_left) * 6.0, 36.0)
-    
-    # Label formula: probability based on req_rr and wickets_left
-    prob_win = 1.0 / (1.0 + np.exp(0.25 * (req_rr - curr_rr) - 0.4 * wickets_left + 1.2))
-    label = (np.random.rand(n_samples) < prob_win).astype(int)
-    
-    return pd.DataFrame({
-        "runs_needed": runs_needed,
-        "balls_left": balls_left,
-        "wickets_left": wickets_left,
-        "req_rr": req_rr,
-        "curr_rr": curr_rr,
-        "target_runs": target_runs,
-        "venue_avg_runs": 172.0,
-        "toss_win_bat_first": np.random.choice([0, 1], n_samples),
-        "label": label
-    })
+def train_win_model(fmt, path=None):
+    """Trains logistic regression (baseline) and XGBoost win-probability models; keeps XGBoost."""
+    df = build_chase_dataset(fmt, path)
+    train, test, cutoff = _time_split(df)
+    X_train, y_train = train[WIN_FEATURES], train["label"]
+    X_test, y_test = test[WIN_FEATURES], test["label"]
 
-def train_win_model(db_path=DEFAULT_DB_PATH):
-    """Trains the XGBoost Classifier for win probability prediction and evaluates performance."""
-    df = build_training_dataset(db_path)
-    X = df[FEATURE_NAMES]
-    y = df['label']
+    candidates = {
+        "Logistic Regression": make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)),
+        # Monotone constraints (same order as WIN_FEATURES): more runs needed or a higher required
+        # rate never helps the chase; more balls, wickets or current run rate never hurts
+        "XGBoost": xgb.XGBClassifier(
+            n_estimators=300, max_depth=4, learning_rate=0.05, subsample=0.8, min_child_weight=50,
+            reg_lambda=5, monotone_constraints="(-1,1,1,-1,1,0)", eval_metric="logloss", random_state=42,
+        ),
+    }
+    metrics = {}
+    for name, model in candidates.items():
+        model.fit(X_train, y_train)
+        prob = model.predict_proba(X_test)[:, 1]
+        metrics[name] = {
+            "log_loss": round(float(log_loss(y_test, prob, labels=[0, 1])), 4),
+            "brier": round(float(brier_score_loss(y_test, prob)), 4),
+            "accuracy": round(float(accuracy_score(y_test, prob >= 0.5)), 4),
+            # AUC is undefined when the test set has a single class (tiny datasets)
+            "roc_auc": round(float(roc_auc_score(y_test, prob)), 4) if y_test.nunique() == 2 else None,
+        }
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    # Prefer the simpler baseline unless XGBoost is clearly better on the most recent matches;
+    # near-ties otherwise flip between runs because XGBoost training is not bit-for-bit deterministic
+    xgb_gain = metrics["Logistic Regression"]["log_loss"] - metrics["XGBoost"]["log_loss"]
+    selected = "XGBoost" if xgb_gain > MIN_LOG_LOSS_GAIN else "Logistic Regression"
+    best = candidates[selected]
+    prob = best.predict_proba(X_test)[:, 1]
+    bins = pd.cut(prob, np.linspace(0, 1, 11), include_lowest=True)
+    calib = pd.DataFrame({"pred": prob, "actual": y_test.values, "bin": bins}).groupby("bin", observed=True).agg(
+        predicted=("pred", "mean"), observed=("actual", "mean"), n=("pred", "size")).reset_index(drop=True)
 
-    model = xgb.XGBClassifier(
-        n_estimators=100,
-        max_depth=4,
-        learning_rate=0.08,
-        eval_metric="logloss",
-        random_state=42
+    info = {
+        "task": "Chase win probability (classification)",
+        "train_matches": int(train["match_id"].nunique()),
+        "test_matches": int(test["match_id"].nunique()),
+        "train_rows": int(len(train)),
+        "test_rows": int(len(test)),
+        "test_from": cutoff,
+        "models": metrics,
+        "selected": selected,
+        "calibration": calib.round(4).to_dict(orient="records"),
+    }
+    background = X_train.sample(min(100, len(X_train)), random_state=42)
+    _save(f"win_{fmt}.pkl", {"model": best, "features": WIN_FEATURES, "info": info, "background": background})
+    return best, info
+
+
+def predict_win_probability(fmt, state):
+    """Chasing side's win probability for a scoreboard state, with SHAP feature contributions."""
+    bundle = load_model(f"win_{fmt}.pkl")
+    model = bundle["model"]
+    X = pd.DataFrame([state])[WIN_FEATURES]
+    chase_prob = float(model.predict_proba(X)[0][1])
+
+    shap_values = _shap_values(fmt, X)
+    impacts = sorted(
+        ({"Feature": f, "Impact": round(float(v), 4)} for f, v in zip(WIN_FEATURES, shap_values)),
+        key=lambda d: abs(d["Impact"]), reverse=True,
     )
-    model.fit(X_train, y_train)
-
-    preds_prob = model.predict_proba(X_test)[:, 1]
-    preds_binary = (preds_prob >= 0.5).astype(int)
-
-    loss = log_loss(y_test, preds_prob)
-    acc = accuracy_score(y_test, preds_binary)
-
-    print(f"XGBoost Win Model Trained: Log-Loss = {loss:.4f}, Accuracy = {acc:.4f}")
-
-    os.makedirs(MODEL_DIR, exist_ok=True)
-    with open(WIN_MODEL_PATH, "wb") as f:
-        pickle.dump(model, f)
-
-    return model, loss, acc
-
-def predict_win_probability(current_state):
-    """
-    Given a current match state dict, returns Win Probability for Team A and Team B,
-    along with SHAP feature contributions.
-    """
-    if not os.path.exists(WIN_MODEL_PATH):
-        model, _, _ = train_win_model()
-    else:
-        with open(WIN_MODEL_PATH, "rb") as f:
-            model = pickle.load(f)
-
-    # Format input row
-    input_df = pd.DataFrame([current_state])[FEATURE_NAMES]
-    
-    prob_team2 = model.predict_proba(input_df)[0][1] # Batting 2nd win prob
-    prob_team1 = 1.0 - prob_team2 # Batting 1st win prob
-
-    # SHAP feature contributions
-    explainer = shap.TreeExplainer(model)
-    shap_values = explainer.shap_values(input_df)
-    
-    # Get top driving features
-    vals = shap_values[0] if isinstance(shap_values, list) else shap_values[0]
-    feature_impacts = []
-    for f_name, val in zip(FEATURE_NAMES, vals):
-        feature_impacts.append({"Feature": f_name, "Impact": round(float(val), 4)})
-    
-    feature_impacts.sort(key=lambda x: abs(x["Impact"]), reverse=True)
-
     return {
-        "team1_win_pct": round(float(prob_team1 * 100), 1),
-        "team2_win_pct": round(float(prob_team2 * 100), 1),
-        "shap_impacts": feature_impacts[:5]
+        "chasing_win_pct": round(chase_prob * 100, 1),
+        "defending_win_pct": round((1 - chase_prob) * 100, 1),
+        "shap_impacts": impacts[:5],
     }
 
-def get_auction_recommendations(team_name, squad_gap_type="Death Bowling"):
-    """
-    FR-2.3 Auction Valuation & Gap Engine:
-    Predicts player valuation based on phase performance and recommends squad targets.
-    """
-    auction_pool = [
-        {"Player": "Mitchell Starc", "Role": "Bowler (Left-Fast)", "Phase_Specialty": "Death Bowling", "Base_Price_Cr": 2.0, "Predicted_Value_Cr": 14.5, "Impact_Score": 94},
-        {"Player": "Heinrich Klaasen", "Role": "Batter (Keeper)", "Phase_Specialty": "Spin Hitter (Middle)", "Base_Price_Cr": 1.5, "Predicted_Value_Cr": 12.0, "Impact_Score": 92},
-        {"Player": "Gerald Coetzee", "Role": "Bowler (Right-Fast)", "Phase_Specialty": "Death Bowling", "Base_Price_Cr": 1.0, "Predicted_Value_Cr": 7.8, "Impact_Score": 86},
-        {"Player": "Rovman Powell", "Role": "Batter (Finisher)", "Phase_Specialty": "Death Hitting", "Base_Price_Cr": 1.5, "Predicted_Value_Cr": 6.5, "Impact_Score": 84},
-        {"Player": "Noor Ahmad", "Role": "Bowler (Left-Spin)", "Phase_Specialty": "Middle Spin Choke", "Base_Price_Cr": 0.5, "Predicted_Value_Cr": 5.2, "Impact_Score": 88},
-        {"Player": "Tristan Stubbs", "Role": "Batter (Middle)", "Phase_Specialty": "Death Hitting", "Base_Price_Cr": 0.5, "Predicted_Value_Cr": 8.0, "Impact_Score": 89},
-        {"Player": "Harshit Rana", "Role": "Bowler (Pace)", "Phase_Specialty": "Powerplay & Death", "Base_Price_Cr": 0.3, "Predicted_Value_Cr": 4.5, "Impact_Score": 83}
-    ]
-    
-    df_pool = pd.DataFrame(auction_pool)
-    if squad_gap_type == "Death Bowling":
-        filtered = df_pool[df_pool['Phase_Specialty'].str.contains("Death")]
-    elif squad_gap_type == "Spin Hitter":
-        filtered = df_pool[df_pool['Phase_Specialty'].str.contains("Spin")]
-    else:
-        filtered = df_pool
-        
-    return filtered.sort_values(by="Impact_Score", ascending=False)
+
+def scoreboard_state(fmt, target, current_score, balls_bowled, wickets_lost):
+    """Builds the win-model feature dict from a live chase scoreboard."""
+    balls_left = max(total_balls(fmt) - balls_bowled, 1)
+    runs_needed = max(target - current_score, 0)
+    return {
+        "runs_needed": runs_needed,
+        "balls_left": balls_left,
+        "wickets_left": max(10 - wickets_lost, 1),
+        "req_rr": round(runs_needed / balls_left * 6, 2),
+        "curr_rr": round(current_score / max(balls_bowled, 1) * 6, 2),
+        "target_runs": target,
+    }
+
+
+# ---------------- First-innings score projection ----------------
+
+def build_first_innings_dataset(fmt, path=None):
+    """One row per legal ball of completed full-length first innings, labelled with the final total."""
+    df = _query("""
+        WITH states AS (
+            SELECT d.match_id, m.start_date, d.is_legal, d.legal_ball_no,
+                   SUM(d.total_runs) OVER w AS runs,
+                   SUM(d.is_wicket) OVER w AS wickets,
+                   SUM(d.total_runs) OVER (PARTITION BY d.match_id) AS final_total
+            FROM deliveries d JOIN matches m USING (match_id)
+            WHERE m.format = ? AND d.innings = 1 AND m.result IN ('normal', 'tie') AND m.method = ''
+              AND m.scheduled_overs = ?
+            WINDOW w AS (PARTITION BY d.match_id ORDER BY d.over, d.ball ROWS UNBOUNDED PRECEDING)
+        )
+        SELECT * FROM states WHERE is_legal
+    """, [fmt, FORMATS[fmt]["overs"]], path)
+    df["balls_bowled"] = df["legal_ball_no"]
+    df["run_rate"] = df["runs"] / df["balls_bowled"] * 6
+    return df[df["balls_bowled"] < total_balls(fmt)].copy()
+
+
+def train_score_model(fmt, path=None):
+    """Trains linear regression (baseline) and XGBoost regressors for the final first-innings total."""
+    df = build_first_innings_dataset(fmt, path)
+    train, test, cutoff = _time_split(df)
+    X_train, y_train = train[SCORE_FEATURES], train["final_total"]
+    X_test, y_test = test[SCORE_FEATURES], test["final_total"]
+
+    candidates = {
+        "Linear Regression": LinearRegression(),
+        "XGBoost": xgb.XGBRegressor(
+            n_estimators=300, max_depth=5, learning_rate=0.05, subsample=0.8, random_state=42,
+        ),
+    }
+    halfway = test["balls_bowled"] == total_balls(fmt) // 2
+    metrics = {}
+    for name, model in candidates.items():
+        model.fit(X_train, y_train)
+        pred = model.predict(X_test)
+        metrics[name] = {
+            "mae": round(float(mean_absolute_error(y_test, pred)), 2),
+            "rmse": round(float(np.sqrt(mean_squared_error(y_test, pred))), 2),
+            "mae_at_halfway": round(float(mean_absolute_error(y_test[halfway], pred[halfway.values])), 2),
+        }
+
+    selected = min(metrics, key=lambda name: metrics[name]["mae"])
+    info = {
+        "task": "First-innings final score (regression)",
+        "train_matches": int(train["match_id"].nunique()),
+        "test_matches": int(test["match_id"].nunique()),
+        "train_rows": int(len(train)),
+        "test_rows": int(len(test)),
+        "test_from": cutoff,
+        "models": metrics,
+        "selected": selected,
+    }
+    _save(f"score_{fmt}.pkl", {"model": candidates[selected], "features": SCORE_FEATURES, "info": info})
+    return candidates[selected], info
+
+
+def project_first_innings_score(fmt, current_score, balls_bowled, wickets_lost):
+    model = load_model(f"score_{fmt}.pkl")["model"]
+    X = pd.DataFrame([{
+        "balls_bowled": balls_bowled,
+        "runs": current_score,
+        "wickets": wickets_lost,
+        "run_rate": current_score / max(balls_bowled, 1) * 6,
+    }])[SCORE_FEATURES]
+    return max(round(float(model.predict(X)[0])), current_score)
+
+
+# ---------------- Batting-style clustering ----------------
+
+CLUSTER_MIN_BALLS = {"T20": 300, "ODI": 750}
+
+
+def batter_profiles(fmt, min_balls=None, path=None):
+    """Career batting profile per batter, including how much of their batting happens in each phase."""
+    df = _query(f"""
+        SELECT d.batter AS player,
+               MODE(d.batting_team) AS team,
+               SUM(d.runs_batter) AS runs,
+               COUNT(*) FILTER (WHERE NOT d.is_wide) AS balls,
+               SUM(CASE WHEN d.is_four OR d.is_six THEN 1 ELSE 0 END) AS boundaries,
+               COUNT(*) FILTER (WHERE NOT d.is_wide AND d.runs_batter = 0) AS dots,
+               COUNT(*) FILTER (WHERE NOT d.is_wide AND {phase_case_sql()} = 'Powerplay') AS pp_balls,
+               COUNT(*) FILTER (WHERE NOT d.is_wide AND {phase_case_sql()} = 'Death') AS death_balls
+        FROM deliveries d JOIN matches m USING (match_id)
+        WHERE m.format = ?
+        GROUP BY d.batter
+        HAVING COUNT(*) FILTER (WHERE NOT d.is_wide) >= ?
+    """, [fmt, min_balls or CLUSTER_MIN_BALLS[fmt]], path)
+    outs = _query("""
+        SELECT d.player_dismissed AS player, COUNT(*) AS outs
+        FROM deliveries d JOIN matches m USING (match_id)
+        WHERE m.format = ? AND d.player_dismissed IS NOT NULL
+          AND d.wicket_type NOT IN ('retired hurt', 'retired not out')
+        GROUP BY 1
+    """, [fmt], path)
+    df = df.merge(outs, on="player", how="left").fillna({"outs": 0})
+    df["strike_rate"] = df["runs"] / df["balls"] * 100
+    # Not-out-heavy careers have inflated averages; cap so they don't dominate the clustering
+    df["average"] = (df["runs"] / df["outs"].clip(lower=1)).clip(upper=80)
+    df["boundary_pct"] = df["boundaries"] / df["balls"] * 100
+    df["dot_pct"] = df["dots"] / df["balls"] * 100
+    df["powerplay_share"] = df["pp_balls"] / df["balls"]
+    df["death_share"] = df["death_balls"] / df["balls"]
+    return df
+
+
+def _name_clusters(centroids):
+    """Names each KMeans cluster from its standardised centroid: where in the innings they bat and how fast."""
+    finisher = centroids["death_share"].idxmax()
+    names = {}
+    for idx, c in centroids.iterrows():
+        if idx == finisher:
+            name = "Finishers"
+        elif c["strike_rate"] < 0 and c["average"] < -0.5:
+            name = "Lower-order batters"
+        else:
+            position = "Top-order" if c["powerplay_share"] > 0 else "Middle-order"
+            name = f"{position} {'aggressors' if c['strike_rate'] > 0 else 'anchors'}"
+        names[idx] = name if name not in names.values() else f"{name} (group {idx + 1})"
+    return names
+
+
+@lru_cache(maxsize=4)
+def cluster_batters(fmt, k=4, min_balls=None):
+    """KMeans clustering of batters into playing styles. Returns (profiles with cluster labels, info)."""
+    df = batter_profiles(fmt, min_balls)
+    scaler = StandardScaler()
+    X = scaler.fit_transform(df[CLUSTER_FEATURES])
+    km = KMeans(n_clusters=k, n_init=20, random_state=42).fit(X)
+    df["cluster_id"] = km.labels_
+
+    centroids_z = pd.DataFrame(km.cluster_centers_, columns=CLUSTER_FEATURES)
+    names = _name_clusters(centroids_z)
+    df["style"] = df["cluster_id"].map(names)
+
+    summary = df.groupby("style")[CLUSTER_FEATURES].mean().round(2)
+    summary["players"] = df.groupby("style").size()
+    info = {
+        "task": "Batting-style segmentation (KMeans clustering)",
+        "k": k,
+        "players": int(len(df)),
+        "min_balls": min_balls or CLUSTER_MIN_BALLS[fmt],
+        "silhouette": round(float(silhouette_score(X, km.labels_)), 3),
+        "clusters": summary.reset_index().to_dict(orient="records"),
+    }
+    return df, info
+
+
+# ---------------- Persistence ----------------
+
+def _save(name, bundle):
+    path = model_path(name)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "wb") as f:
+        pickle.dump(bundle, f)
+    load_model.cache_clear()
+    _explainer.cache_clear()
+
+
+@lru_cache(maxsize=8)
+def load_model(name):
+    path = model_path(name)
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"{name} not found; run `python -m src.pipeline` to train the models.")
+    with open(path, "rb") as f:
+        return pickle.load(f)
+
+
+@lru_cache(maxsize=4)
+def _explainer(fmt):
+    bundle = load_model(f"win_{fmt}.pkl")
+    model = bundle["model"]
+    if isinstance(model, xgb.XGBClassifier):
+        return shap.TreeExplainer(model)
+    scaler, lr = model.named_steps["standardscaler"], model.named_steps["logisticregression"]
+    return shap.LinearExplainer(lr, scaler.transform(bundle["background"]))
+
+
+def _shap_values(fmt, X):
+    """SHAP contributions (log-odds) of each feature for one row, for either model type."""
+    model = load_model(f"win_{fmt}.pkl")["model"]
+    if not isinstance(model, xgb.XGBClassifier):
+        X = model.named_steps["standardscaler"].transform(X)
+    values = _explainer(fmt).shap_values(X)
+    return np.asarray(values).reshape(-1)[:len(WIN_FEATURES)]
+
+
+def model_report():
+    """Evaluation metrics for every trained model, as written by train_all()."""
+    path = model_path("metrics.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path) as f:
+        return json.load(f)
+
+
+def train_all(formats=None, path=None, cluster_min_balls=None):
+    report = {}
+    for fmt in formats or FORMATS:
+        _, win_info = train_win_model(fmt, path)
+        _, score_info = train_score_model(fmt, path)
+        cluster_batters.cache_clear()
+        _, cluster_info = cluster_batters(fmt, min_balls=cluster_min_balls)
+        report[fmt] = {"win_probability": win_info, "score_projection": score_info, "batter_clusters": cluster_info}
+        print(f"[{fmt}] win model: {win_info['models']}")
+        print(f"[{fmt}] score model: {score_info['models']}")
+        print(f"[{fmt}] clusters: silhouette {cluster_info['silhouette']} over {cluster_info['players']} batters")
+    with open(model_path("metrics.json"), "w") as f:
+        json.dump(report, f, indent=2, default=str)
+    return report

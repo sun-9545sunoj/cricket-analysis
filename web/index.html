@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cricket Analytics Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.27.0/plotly.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🏏 Cricket Analytics Hub</h1>
+    <p class="caption">Real ball-by-ball international data from Cricsheet • Head-to-head • Win probability • Simulation • Player styles</p>
+    <p class="caption" id="coverage"></p>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar">
+      <h2>⚙️ Matchup</h2>
+      <label>Format
+        <select id="format">
+          <option value="T20">T20 International</option>
+          <option value="ODI">One Day International</option>
+        </select>
+      </label>
+      <label>Team A
+        <select id="team-a"></select>
+      </label>
+      <label>Team B
+        <select id="team-b"></select>
+      </label>
+
+      <h2>🎯 Live Scoreboard</h2>
+      <p class="hint">Enter the score of a match in progress for the predictor and simulator.</p>
+      <label>Batting side
+        <select id="batting-side">
+          <option value="a">Team A</option>
+          <option value="b">Team B</option>
+        </select>
+      </label>
+      <label>Innings
+        <select id="innings">
+          <option value="2">Chasing (2nd innings)</option>
+          <option value="1">Setting a total (1st innings)</option>
+        </select>
+      </label>
+      <label id="target-label">Target
+        <input id="target" type="number" min="1" max="500" value="180">
+      </label>
+      <label>Current score
+        <input id="current" type="number" min="0" max="500" value="120">
+      </label>
+      <label>Overs bowled (e.g. 15.2)
+        <input id="overs" type="number" min="0.1" step="0.1" value="15">
+      </label>
+      <label>Wickets down
+        <input id="wickets" type="number" min="0" max="9" value="4">
+      </label>
+    </aside>
+
+    <main>
+      <div id="error" class="alert-card hidden"></div>
+
+      <nav class="tabs">
+        <button class="tab active" data-tab="series">🤝 Series &amp; Head-to-Head</button>
+        <button class="tab" data-tab="live">📊 Live Predictor</button>
+        <button class="tab" data-tab="matchups">⚔️ Player Matchups</button>
+        <button class="tab" data-tab="sim">🎲 Simulator</button>
+        <button class="tab" data-tab="styles">🧬 Player Styles (ML)</button>
+        <button class="tab" data-tab="models">🧪 Model Report</button>
+      </nav>
+
+      <section id="tab-series" class="panel">
+        <div id="series-card" class="summary-card"></div>
+        <div class="metrics" id="h2h-metrics"></div>
+        <div class="grid-2">
+          <div>
+            <h3>Recent results</h3>
+            <div class="table-wrap"><table id="results-table"></table></div>
+          </div>
+          <div id="chart-phase" class="chart"></div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h3 id="bat-a-title"></h3>
+            <div class="table-wrap"><table id="bat-a"></table></div>
+            <h3 id="bowl-a-title"></h3>
+            <div class="table-wrap"><table id="bowl-a"></table></div>
+          </div>
+          <div>
+            <h3 id="bat-b-title"></h3>
+            <div class="table-wrap"><table id="bat-b"></table></div>
+            <h3 id="bowl-b-title"></h3>
+            <div class="table-wrap"><table id="bowl-b"></table></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-live" class="panel hidden">
+        <div id="verdict" class="summary-card"></div>
+        <div id="chase-view">
+          <div class="metrics">
+            <div class="metric badge-team1"><div class="metric-label" id="m-bat-label"></div><div class="metric-value" id="m-bat"></div></div>
+            <div class="metric badge-team2"><div class="metric-label" id="m-bowl-label"></div><div class="metric-value" id="m-bowl"></div></div>
+            <div class="metric card"><div class="metric-label">Match pressure</div><div class="metric-value small" id="m-pressure"></div><div class="metric-sub" id="m-mpi"></div></div>
+            <div class="metric card"><div class="metric-label">Required rate</div><div class="metric-value small" id="m-rrr"></div><div class="metric-sub" id="m-crr"></div></div>
+          </div>
+          <div class="grid-2">
+            <div id="chart-donut" class="chart"></div>
+            <div id="chart-shap" class="chart"></div>
+          </div>
+        </div>
+        <div id="first-view" class="hidden">
+          <div class="metrics">
+            <div class="metric badge-team1"><div class="metric-label">ML projected total</div><div class="metric-value" id="m-projection"></div><div class="metric-sub" id="m-projection-sub"></div></div>
+            <div class="metric card"><div class="metric-label">Simulated likely range</div><div class="metric-value small" id="m-sim-range"></div><div class="metric-sub">10th–90th percentile</div></div>
+            <div class="metric card"><div class="metric-label">Current run rate</div><div class="metric-value small" id="m-first-crr"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-matchups" class="panel hidden">
+        <p class="hint" id="matchup-caption"></p>
+        <div id="chart-heatmap" class="chart tall"></div>
+        <h3>🚨 Matchups where the bowler has dominated</h3>
+        <div id="alerts" class="alert-grid"></div>
+      </section>
+
+      <section id="tab-sim" class="panel hidden">
+        <div class="grid-sim">
+          <div>
+            <label>What-if strategy
+              <select id="tactic"></select>
+            </label>
+            <label>Simulations
+              <select id="n-sims">
+                <option>1000</option><option selected>5000</option><option>10000</option>
+              </select>
+            </label>
+            <label class="inline"><input id="use-team-profile" type="checkbox" checked> Use batting side's last-3-years scoring profile</label>
+            <button id="run-sim" class="primary">Run simulation</button>
+            <div id="sim-results"></div>
+          </div>
+          <div id="chart-hist" class="chart"></div>
+        </div>
+      </section>
+
+      <section id="tab-styles" class="panel hidden">
+        <p class="hint" id="styles-caption"></p>
+        <div id="chart-clusters" class="chart tall"></div>
+        <div class="table-wrap"><table id="styles-table"></table></div>
+      </section>
+
+      <section id="tab-models" class="panel hidden">
+        <div id="model-report"></div>
+        <div id="chart-calibration" class="chart"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer>Data: <a href="https://cricsheet.org" target="_blank" rel="noopener">Cricsheet</a> • <a href="/docs">API docs</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>

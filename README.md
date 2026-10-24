@@ -1,97 +1,78 @@
-# IPL Edge Analytics & Predictive Match Platform
+# Cricket Analytics Hub
 
-![Version 1.0](https://img.shields.io/badge/version-1.0.0--baseline-brightgreen) ![Status](https://img.shields.io/badge/status-verified--passed-success) ![IEEE Compliance](https://img.shields.io/badge/IEEE-Std--830--1998-blue)
+Analytics and machine learning on real ball-by-ball international cricket data from [Cricsheet](https://cricsheet.org): head-to-head records and series results, player stats, live win probability, score projection, Monte Carlo match simulation and batting-style clustering. Defaults to **India vs New Zealand**, and works for any pair of teams.
 
-> **Version 1.0 Baseline Release**: Human-Centered Match Center • Real-Time Win Probabilities • 40-Over Timeline Curves • 10,000 Monte Carlo Simulator • 22-Player H2H Mismatch Engine • FastAPI REST Microservices
-
-Compliant with **IEEE Std 830-1998 Software Requirements Specification (SRS)** format.
-
----
-
-## 📌 Architecture Overview
+**Data:** 6,223 men's internationals (3,627 T20Is from 2005 and 2,596 ODIs from 2002, up to 14 Oct 2026). That is 2.19 million deliveries by 4,965 batters.
 
 ```
-+---------------------+     +--------------------+     +-----------------------+
-|  Cricsheet Data     | --> | Python ETL Engine  | --> | Embedded DB (DuckDB)  |
-|  (Raw Match JSONs)  |     | (pandas/polars)    |     | (Matches, Deliveries) |
-+---------------------+     +--------------------+     +-----------------------+
-                                                                   |
-                                                                   v
-+---------------------+     +--------------------+     +-----------------------+
-| Streamlit Web App   | <-- | ML Inference Core  | <-- | Feature Pipeline      |
-| (UI & Dashboard)    |     | (XGBoost / SHAP)   |     | (MPI, Phase Stats)    |
-+---------------------+     +--------------------+     +-----------------------+
+Cricsheet JSON zips ──► ETL (src/etl.py) ──► DuckDB: matches, deliveries, match_players
+                                                   │
+                     ┌─────────────────────────────┼──────────────────────────────┐
+                     ▼                             ▼                              ▼
+          SQL analytics (features.py)   ML models (models.py)      Monte Carlo (simulator.py)
+                     └─────────────────────────────┼──────────────────────────────┘
+                                                   ▼
+                          FastAPI (src/api.py) ──► HTML/JS dashboard (/app)
+                          Streamlit dashboard (app.py)
 ```
 
----
+## What it shows
 
-## ⚡ Key Modules (v1.0 Baseline)
+| Tab | What it does |
+|---|---|
+| **Series & Head-to-Head** | Latest bilateral series with results and tally, all-time head-to-head record, recent results, top batters and bowlers in the fixture, batting run rate by phase |
+| **Live Predictor** | Enter a live score. Chasing: win probability with SHAP explanation and a Match Pressure Index. Batting first: projected final total |
+| **Player Matchups** | Batter-vs-bowler heatmap for the two latest XIs, with alerts where a bowler has dominated |
+| **Simulator** | Ball-by-ball Monte Carlo of the rest of the innings, using the batting team's real per-phase scoring over the last 3 years, plus what-if tactics |
+| **Player Styles (ML)** | KMeans clustering of batters into styles (top-order aggressors and anchors, finishers, lower order) |
+| **Model Report** | Test metrics, baseline comparison and a calibration chart for every model |
 
-- **Module 1: Data Pipeline & Advanced ETL (`src/etl.py`, `src/features.py`)**
-  - High-speed DuckDB relational database for match metadata and ball-by-ball deliveries.
-  - Innings phase breakdown: Powerplay (Overs 1–6), Middle (Overs 7–15), Death (Overs 16–20).
-  - Dynamic metrics: Match Pressure Index (MPI) with human-friendly status levels (🟢 Comfortable, 🟡 Moderate, 🟠 High, 🔴 Panic Mode) and True Strike Rate ($SR_{true}$).
+## Machine learning
 
-- **Module 2: Machine Learning Engines (`src/models.py`)**
-  - **XGBoost Match Winner Predictor**: Real-time win probability outputs (Log-loss 0.4210, Accuracy 84.5%).
-  - **SHAP Model Explainability**: Quantifies top 5 driving decision factors for local prediction transparency.
-  - **Auction Valuation Model**: Phase capability regression to predict player bid prices & suggest replacement targets.
+All supervised models use a **time-based split**: the oldest 80% of matches are used for training and the most recent 20% for testing, so the models are always scored on matches they never saw. Each model is compared with a simple baseline. The win model keeps the logistic regression baseline unless XGBoost beats it by more than 0.005 test log loss; the score model keeps whichever has the lower test MAE.
 
-- **Module 3: Monte Carlo Simulator & What-If Engine (`src/simulator.py`)**
-  - 10,000-iteration ball-by-ball match simulator for score distributions and 90% confidence bounds.
-  - Tactical "What-If" scenario sandbox (Death Specialist Bowler vs Power Hitter Batter).
+| Model | Task | Test result (T20I) | Test result (ODI) |
+|---|---|---|---|
+| Logistic regression vs XGBoost (monotone constraints) | Chasing side's win probability after every ball | Logistic regression kept (XGBoost tied): log loss 0.290, ROC AUC 0.948, accuracy 86.8% | Logistic regression kept: log loss 0.403 (XGBoost 0.42), AUC 0.897, accuracy 80.3% |
+| Linear regression vs XGBoost regressor | Final first-innings total from the current score | XGBoost MAE 19.9 runs (baseline 21.3) | XGBoost MAE 34.0 runs (baseline 35.4) |
+| KMeans (k=4) | Batting styles from strike rate, average, boundary %, dot-ball % and phase shares | 746 batters, silhouette 0.26 | 420 batters, silhouette 0.26 |
 
-- **Module 4: Human-Centered Match Center (`app.py`, `src/utils.py`)**
-  - **Plain English Verdict Banner**: Instant natural language match summary.
-  - **40-Over Timeline Curve**: Dynamic ball-by-ball momentum visualization.
-  - **22-Player H2H Heatmap**: $11 \times 11$ strike rate matrix, tactical alert cards, and Phase Capability radar charts.
+SHAP values explain each win-probability prediction. Exact figures are rewritten to `data/models/metrics.json` each time the models are retrained.
 
-- **Module 5: FastAPI Microservices & Containerization (`src/api.py`, `Dockerfile`)**
-  - Production REST API endpoints (`/health`, `/api/v1/predict-win-prob`, `/api/v1/simulate-match`, `/api/v1/h2h-matrix`).
-  - Interactive Swagger API playground at `http://localhost:8000/docs`.
-
----
-
-## 🚀 Quick Start Guide
-
-### 1. Installation
+## Quick start
 
 ```bash
-cd /Users/nagasunojr/Documents/naga/projects/ipl
+python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+
+python -m src.pipeline            # download Cricsheet data (~32 MB), build DuckDB, train models (~15 s)
+
+uvicorn src.api:app --port 8000   # HTML/JS dashboard at http://localhost:8000/app/, API docs at /docs
+streamlit run app.py              # Streamlit version of the dashboard
 ```
 
-### 2. Launch Interactive Dashboard (v1.0 UI)
+**Following a live series:** Cricsheet usually publishes matches a few days after they're played. Run `python -m src.pipeline --refresh` to pull the latest archives and retrain. While a match is in progress, enter the score in the sidebar to get live predictions.
 
-```bash
-streamlit run app.py
-```
+**Docker:** `docker compose up --build` runs the pipeline once, then serves the dashboard on :8501 and the API on :8000.
 
-### 3. Launch FastAPI REST API Server
-
-```bash
-uvicorn src.api:app --reload --port 8000
-```
-
-### 4. Run Verification Test Suite
+## Tests
 
 ```bash
 python -m pytest -v
 ```
 
----
+Tests build a temporary database from `tests/fixtures/india_nz_matches.zip` (45 real India v New Zealand matches, 2019–2026). They never touch `data/`.
 
-## 🧪 Verification Matrix Summary (v1.0)
+## API
 
-| Requirement ID | Description | Testing Strategy | Pass Criteria | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **FR-1.1** | Cricsheet JSON Parsing | `test_etl.py` | Parses 1,000+ match files without error | **PASSED** |
-| **FR-2.1** | XGBoost Probability Model | `test_models.py` | Log-Loss $\le 0.55$, Accuracy $\ge 70\%$ | **PASSED** |
-| **FR-3.3** | 22-Player Matchup Matrix | `test_models.py` | Matrix populates $11 \times 11$ under 1.0s | **PASSED** |
-| **NFR-1** | System Latency | End-to-End Benchmark | Total rerun time $< 1.5$s | **PASSED** |
-| **API-1** | FastAPI Endpoints | `test_simulator_and_api.py` | 100% route health check and JSON responses | **PASSED** |
+| Endpoint | Purpose |
+|---|---|
+| `GET /api/v1/meta` | Formats, teams, data coverage |
+| `GET /api/v1/head-to-head`, `GET /api/v1/series/latest` | Results between two teams |
+| `GET /api/v1/players/batting`, `/players/bowling`, `/phase-stats` | Player and team aggregates (filter by team, opponent, date) |
+| `POST /api/v1/predict-win-prob`, `/project-score` | Live predictions |
+| `POST /api/v1/simulate-match`, `/h2h-matrix` | Simulation and matchups |
+| `GET /api/v1/batter-clusters`, `/model-report` | Clustering output and model metrics |
 
----
-
-## 📄 License
-MIT License.
+## License
+Code: MIT. Match data from [Cricsheet](https://cricsheet.org), available under the [Open Data Commons Attribution License](https://cricsheet.org/licensing/).

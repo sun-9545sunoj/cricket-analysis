@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
@@ -18,5 +18,5 @@ COPY . .
 # Expose Streamlit and FastAPI ports
 EXPOSE 8501 8000
 
-# Default entry point runs Streamlit dashboard
+# Default entry point runs the Streamlit dashboard (run `python -m src.pipeline` first)
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]

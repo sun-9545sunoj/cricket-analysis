@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Generated data: rebuild with `python -m src.pipeline`
+data/raw/
+data/*.duckdb
+data/*.duckdb.wal
+data/models/
+
+.DS_Store

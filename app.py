@@ -1,396 +1,268 @@
-import os
-import numpy as np
 import pandas as pd
 import streamlit as st
 
-from src.etl import setup_db_if_needed, DEFAULT_DB_PATH, IPL_TEAMS, IPL_VENUES, SAMPLE_BATTERS
+from src.config import DEFAULT_TEAM_A, DEFAULT_TEAM_B, FORMATS, overs_to_balls, total_balls
+from src.etl import database_ready, get_connection
 from src.features import (
-    calculate_mpi, 
-    get_mpi_interpretation, 
-    calculate_true_strike_rate, 
-    get_sr_true_interpretation, 
-    compute_venue_phase_averages, 
-    get_h2h_matrix, 
-    get_tactical_alerts, 
-    get_phase_radar_stats
+    batting_stats, bowling_stats, calculate_mpi, get_mpi_interpretation, head_to_head, latest_series,
+    list_teams, phase_stats, xi_matchup,
 )
-from src.models import train_win_model, predict_win_probability, get_auction_recommendations
-from src.simulator import run_monte_carlo_simulation, simulate_what_if_scenario
+from src.models import (
+    cluster_batters, model_report, predict_win_probability, project_first_innings_score, scoreboard_state,
+)
+from src.simulator import TACTICS, simulate_what_if_scenario
 from src.utils import (
-    create_win_prob_donut, 
-    create_shap_bar_chart, 
-    create_h2h_heatmap, 
-    create_phase_radar_chart,
-    create_win_prob_curve_chart,
-    create_monte_carlo_hist
+    create_calibration_chart, create_cluster_scatter, create_h2h_heatmap, create_monte_carlo_hist,
+    create_phase_bar_chart, create_shap_bar_chart, create_win_prob_donut,
 )
 
-# Page Configuration
-st.set_page_config(
-    page_title="IPL Edge Analytics | Match Center",
-    page_icon="🏏",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+st.set_page_config(page_title="Cricket Analytics Hub", page_icon="🏏", layout="wide", initial_sidebar_state="expanded")
 
-# Inject Custom Modern CSS & Friendly Tooltip Styles
 st.markdown("""
 <style>
-    .main {
-        background-color: #0e1117;
-        color: #ffffff;
-    }
-    .metric-badge-team1 {
-        background: linear-gradient(135deg, #11998e, #38ef7d);
-        border-radius: 12px;
-        padding: 18px;
-        color: white;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(56, 239, 125, 0.2);
-    }
-    .metric-badge-team2 {
-        background: linear-gradient(135deg, #005c97, #00c6ff);
-        border-radius: 12px;
-        padding: 18px;
-        color: white;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(0, 198, 255, 0.2);
-    }
-    .summary-card {
-        background: linear-gradient(135deg, rgba(30, 34, 45, 0.9), rgba(20, 24, 33, 0.95));
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-left: 5px solid #38ef7d;
-        border-radius: 12px;
-        padding: 18px;
-        margin-bottom: 20px;
-    }
-    .alert-card {
-        background: rgba(255, 75, 75, 0.15);
-        border-left: 4px solid #ff4b4b;
-        border-radius: 10px;
-        padding: 14px;
-        margin-bottom: 12px;
-    }
-    .info-card {
-        background: rgba(0, 198, 255, 0.12);
-        border-left: 4px solid #00c6ff;
-        border-radius: 10px;
-        padding: 14px;
-        margin-bottom: 12px;
-    }
+    .metric-badge-team1 { background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 12px; padding: 18px; color: white; text-align: center; }
+    .metric-badge-team2 { background: linear-gradient(135deg, #005c97, #00c6ff); border-radius: 12px; padding: 18px; color: white; text-align: center; }
+    .summary-card { background: linear-gradient(135deg, rgba(30, 34, 45, 0.9), rgba(20, 24, 33, 0.95)); border: 1px solid rgba(255, 255, 255, 0.15);
+                    border-left: 5px solid #38ef7d; border-radius: 12px; padding: 18px; margin-bottom: 20px; }
+    .alert-card { background: rgba(255, 75, 75, 0.15); border-left: 4px solid #ff4b4b; border-radius: 10px; padding: 14px; margin-bottom: 12px; }
 </style>
 """, unsafe_allow_html=True)
 
-@st.cache_resource
-def setup_environment():
-    """Initializes database and trains initial ML win model if needed."""
-    from src.etl import init_db, generate_sample_data, ingest_json_files
-    if not os.path.exists(DEFAULT_DB_PATH):
-        generate_sample_data(100)
-        ingest_json_files()
-        train_win_model()
-    return True
+if not database_ready():
+    st.error("No data yet. Run `python -m src.pipeline` to download Cricsheet data and train the models, then reload.")
+    st.stop()
 
-setup_environment()
 
-# Header & Title
-st.title("🏏 IPL Match Center & Smart Predictive Dashboard")
-st.caption("Human-Friendly Cricket Analytics • Live Win Probabilities • Tactical Mismatches • Match Simulation")
+@st.cache_data
+def coverage():
+    con = get_connection(read_only=True)
+    try:
+        return con.execute("SELECT format, COUNT(*), MIN(start_date), MAX(start_date) FROM matches GROUP BY format").df()
+    finally:
+        con.close()
 
-# Sidebar - Global Match Parameters
-st.sidebar.header("⚙️ Match Setup & Live Situation")
-st.sidebar.caption("Adjust match settings below to see instant predictive updates.")
 
-team1 = st.sidebar.selectbox("Team A (Batting / Home)", IPL_TEAMS, index=0)
-available_teams_b = [t for t in IPL_TEAMS if t != team1]
-team2 = st.sidebar.selectbox("Team B (Bowling / Visitor)", available_teams_b, index=0)
+def result_text(m):
+    if m["result"] == "no result":
+        return "No result"
+    if m["result"] == "tie":
+        return f"Tie ({m['winner']} won super over)" if m["winner"] else "Tie"
+    by = f"{m['win_by_runs']} runs" if m["win_by_runs"] else f"{m['win_by_wickets']} wkts"
+    return f"{m['winner']} won by {by}" + (f" ({m['method']})" if m["method"] else "")
 
-venue = st.sidebar.selectbox("Venue / Stadium", IPL_VENUES, index=0)
-toss_winner = st.sidebar.radio("Toss Winner", [team1, team2], index=0)
-toss_decision = st.sidebar.radio("Toss Decision", ["Bat First", "Field First"], index=0)
+
+cov = coverage()
+st.title("🏏 Cricket Analytics Hub")
+st.caption("Real ball-by-ball international data from Cricsheet • " + " • ".join(
+    f"{r['count_star()']:,} {r['format']}s ({str(r['min(start_date)'])[:4]}–{str(r['max(start_date)'])[:10]})"
+    for _, r in cov.iterrows()
+))
+
+# ---------------- Sidebar ----------------
+st.sidebar.header("⚙️ Matchup")
+fmt = st.sidebar.selectbox("Format", list(FORMATS), format_func=lambda f: {"T20": "T20 International", "ODI": "One Day International"}[f])
+teams = list_teams(fmt)
+team_a = st.sidebar.selectbox("Team A", teams, index=teams.index(DEFAULT_TEAM_A) if DEFAULT_TEAM_A in teams else 0)
+teams_b = [t for t in teams if t != team_a]
+team_b = st.sidebar.selectbox("Team B", teams_b, index=teams_b.index(DEFAULT_TEAM_B) if DEFAULT_TEAM_B in teams_b else 0)
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("🎯 Live 2nd Innings Scorecard")
-target_score = st.sidebar.number_input("Target Score (To Win)", min_value=50, max_value=300, value=175, step=1)
-current_score = st.sidebar.number_input("Current Score", min_value=0, max_value=300, value=115, step=1)
-overs_bowled = st.sidebar.slider("Overs Bowled (Completed)", min_value=0.1, max_value=19.5, value=13.2, step=0.1)
-wickets_lost = st.sidebar.slider("Wickets Down", min_value=0, max_value=9, value=3, step=1)
+st.sidebar.subheader("🎯 Live Scoreboard")
+st.sidebar.caption("Enter the score of a match in progress for the predictor and simulator.")
+batting = st.sidebar.radio("Batting side", [team_a, team_b])
+bowling = team_b if batting == team_a else team_a
+chasing = st.sidebar.radio("Innings", ["Chasing (2nd innings)", "Setting a total (1st innings)"]) == "Chasing (2nd innings)"
+max_score = 500 if fmt == "ODI" else 350
+target = st.sidebar.number_input("Target", 1, max_score, 180 if fmt == "T20" else 290) if chasing else None
+current = st.sidebar.number_input("Current score", 0, max_score, 120 if fmt == "T20" else 150)
+overs = st.sidebar.number_input("Overs bowled (e.g. 15.2)", 0.1, FORMATS[fmt]["overs"] - 0.5, 15.0 if fmt == "T20" else 30.0, 0.1, format="%.1f")
+wickets_lost = st.sidebar.number_input("Wickets down", 0, 9, 4 if fmt == "T20" else 3)
 
-# Derived live match variables
-balls_bowled = int(overs_bowled) * 6 + int(round((overs_bowled % 1) * 10))
-balls_remaining = max(120 - balls_bowled, 1)
-runs_needed = max(target_score - current_score, 0)
-wickets_remaining = max(10 - wickets_lost, 1)
+try:
+    balls_bowled = overs_to_balls(overs)
+except ValueError as e:
+    st.sidebar.error(str(e))
+    st.stop()
 
-curr_rr = round((current_score / max(balls_bowled, 1)) * 6.0, 2)
-req_rr = round((runs_needed / balls_remaining) * 6.0, 2)
-mpi_value = calculate_mpi(req_rr, wickets_remaining, balls_remaining)
-mpi_info = get_mpi_interpretation(mpi_value)
-
-match_state = {
-    "runs_needed": runs_needed,
-    "balls_left": balls_remaining,
-    "wickets_left": wickets_remaining,
-    "req_rr": req_rr,
-    "curr_rr": curr_rr,
-    "target_runs": target_score,
-    "venue_avg_runs": 172.0,
-    "toss_win_bat_first": 1 if (toss_winner == team2 and toss_decision == "Field First") else 0
-}
-
-win_results = predict_win_probability(match_state)
-
-# Plain English Executive Match Summary Banner
-favored_team = team1 if win_results['team1_win_pct'] >= 50.0 else team2
-favored_pct = max(win_results['team1_win_pct'], win_results['team2_win_pct'])
-
-st.markdown(f"""
-<div class="summary-card">
-    <div style="font-size: 18px; font-weight: bold; color: #38ef7d;">
-        📢 Plain English Match Verdict: {favored_team} is Favored to Win ({favored_pct}%)
-    </div>
-    <div style="font-size: 14px; margin-top: 6px; color: #dddddd;">
-        <strong>Situation Summary:</strong> {team1} needs <strong>{runs_needed} runs</strong> off <strong>{balls_remaining} balls</strong> 
-        (Required Rate: <strong>{req_rr} RPO</strong>) with <strong>{wickets_remaining} wickets</strong> in hand. 
-        Match pressure status is <strong>{mpi_info['emoji']} {mpi_info['level']}</strong> ({mpi_info['desc']}).
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# Main Navigation Tabs
-tab1, tab2, tab3, tab4 = st.tabs([
-    "📊 Win Probability & Match Drivers", 
-    "⚔️ 22-Player Tactical Mismatches", 
-    "🎲 Match Simulator & What-If Sandbox", 
-    "💰 Auction Recommendations & API"
+tab_series, tab_live, tab_matchups, tab_sim, tab_styles, tab_models = st.tabs([
+    "🤝 Series & Head-to-Head", "📊 Live Predictor", "⚔️ Player Matchups",
+    "🎲 Simulator", "🧬 Player Styles (ML)", "🧪 Model Report",
 ])
 
-# ----------------------------------------------------
-# TAB 1: Human-Friendly Win Probability & Key Drivers
-# ----------------------------------------------------
-with tab1:
-    with st.expander("ℹ️ How to Read This Tab (Simple Guide)", expanded=False):
-        st.write("""
-        - **Win Probability**: Shows each team's calculated chance of winning the match right now based on machine learning trained on thousands of historical IPL delivery states.
-        - **Pressure Gauge**: Evaluates match tension into clear categories (*Comfortable, Moderate, High, Panic Mode*).
-        - **Top Key Drivers**: Highlights the top reasons why the prediction favors one team (e.g., wickets remaining or required run rate).
-        """)
-
-    st.subheader("Win Chances & Match Pressure Gauge")
-    
-    col_m1, col_m2, col_m3, col_m4 = st.columns(4)
-    with col_m1:
+# ---------------- Series & head-to-head ----------------
+with tab_series:
+    event, series = latest_series(team_a, team_b)
+    if event:
+        tally = series.groupby("format")["winner"].value_counts().unstack(fill_value=0)
+        tally_text = " • ".join(
+            f"{f}s: {team_a} {tally.loc[f].get(team_a, 0)}–{tally.loc[f].get(team_b, 0)} {team_b}" for f in tally.index
+        )
+        results = " | ".join(
+            f"{r['format']} {pd.to_datetime(r['start_date']):%d %b %Y}: {result_text(r)}" for _, r in series.iterrows()
+        )
         st.markdown(f"""
-        <div class="metric-badge-team1">
-            <div style="font-size: 13px; text-transform: uppercase;">{team1} Win Chance</div>
-            <div style="font-size: 34px; font-weight: 800;">{win_results['team1_win_pct']}%</div>
-            <div style="font-size: 12px; opacity: 0.9;">Chasing Target</div>
+        <div class="summary-card">
+            <div style="font-size: 18px; font-weight: bold; color: #38ef7d;">📅 Latest bilateral series: {event}</div>
+            <div style="margin-top: 6px;">{tally_text}</div>
+            <div style="font-size: 13px; margin-top: 6px; color: #ddd;">{results}</div>
         </div>
         """, unsafe_allow_html=True)
-    with col_m2:
-        st.markdown(f"""
-        <div class="metric-badge-team2">
-            <div style="font-size: 13px; text-transform: uppercase;">{team2} Win Chance</div>
-            <div style="font-size: 34px; font-weight: 800;">{win_results['team2_win_pct']}%</div>
-            <div style="font-size: 12px; opacity: 0.9;">Defending Score</div>
-        </div>
-        """, unsafe_allow_html=True)
-    with col_m3:
-        st.metric(
-            label="Match Pressure Gauge", 
-            value=f"{mpi_info['emoji']} {mpi_info['level']}", 
-            delta=f"MPI Score: {mpi_value}"
-        )
-    with col_m4:
-        st.metric(
-            label="Scoring Speed Needed", 
-            value=f"{req_rr} RPO", 
-            delta=f"Current Rate: {curr_rr} RPO"
-        )
+        st.caption("Matches from a series in progress appear once Cricsheet publishes them — run `python -m src.pipeline --refresh`.")
+    else:
+        st.info("No bilateral series between these teams in the data.")
 
-    st.markdown("---")
-    c1, c2 = st.columns([1, 1])
-    with c1:
-        donut_fig = create_win_prob_donut(team1, win_results['team1_win_pct'], team2, win_results['team2_win_pct'])
-        st.plotly_chart(donut_fig, use_container_width=True)
+    summary, h2h = head_to_head(team_a, team_b, fmt)
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric(f"{fmt} matches", summary["matches"], f"{summary['first_match']} → {summary['last_match']}", delta_color="off")
+    c2.metric(f"{team_a} wins", summary["team_a_wins"])
+    c3.metric(f"{team_b} wins", summary["team_b_wins"])
+    decided = summary["team_a_wins"] + summary["team_b_wins"]
+    c4.metric(f"{team_a} win rate", f"{round(summary['team_a_wins'] / decided * 100) if decided else 0}%",
+              f"{summary['no_result']} no result", delta_color="off")
 
-    with c2:
-        shap_fig = create_shap_bar_chart(win_results['shap_impacts'])
-        st.plotly_chart(shap_fig, use_container_width=True)
+    left, right = st.columns(2)
+    with left:
+        st.subheader("Recent results")
+        recent = h2h.head(10).copy()
+        recent["Date"] = pd.to_datetime(recent["start_date"]).dt.strftime("%d %b %Y")
+        recent["Result"] = recent["summary"]
+        st.dataframe(recent[["Date", "event_name", "Result", "player_of_match"]].rename(
+            columns={"event_name": "Event", "player_of_match": "Player of match"}), hide_index=True, width="stretch")
+    with right:
+        since = (pd.to_datetime(cov.loc[cov["format"] == fmt, "max(start_date)"].iloc[0]) - pd.DateOffset(years=3)).strftime("%Y-%m-%d")
+        st.plotly_chart(create_phase_bar_chart(
+            [p[2] for p in FORMATS[fmt]["phases"]],
+            team_a, phase_stats(fmt, team_a, since=since), team_b, phase_stats(fmt, team_b, since=since),
+        ), width="stretch")
 
-    # 40-Over Dynamic Win Timeline
-    st.markdown("---")
-    st.subheader("📈 40-Over Ball-by-Ball Match Momentum Timeline")
-    st.caption("Tracks how match control shifts ball-by-ball across overs.")
-    
-    balls_arr = np.arange(1, balls_bowled + 1)
-    start_p = 50.0
-    end_p = win_results['team1_win_pct']
-    curve_p = np.linspace(start_p, end_p, len(balls_arr)) + np.random.normal(0, 2.5, len(balls_arr))
-    curve_p = np.clip(curve_p, 5.0, 95.0)
+    bat_cols = {"player": "Batter", "innings": "Inns", "runs": "Runs", "average": "Avg", "strike_rate": "SR"}
+    bowl_cols = {"player": "Bowler", "innings": "Inns", "wickets": "Wkts", "economy": "Econ", "average": "Avg"}
+    for col, (team, opp) in zip(st.columns(2), [(team_a, team_b), (team_b, team_a)]):
+        with col:
+            st.markdown(f"**🏏 {team} top batters vs {opp}**")
+            st.dataframe(batting_stats(fmt, team, opp, min_balls=30).head(6)[list(bat_cols)].rename(columns=bat_cols),
+                         hide_index=True, width="stretch")
+            st.markdown(f"**🎯 {team} top bowlers vs {opp}**")
+            st.dataframe(bowling_stats(fmt, team, opp, min_balls=30).head(6)[list(bowl_cols)].rename(columns=bowl_cols),
+                         hide_index=True, width="stretch")
 
-    curve_fig = create_win_prob_curve_chart(balls_arr, curve_p, team1, team2)
-    st.plotly_chart(curve_fig, use_container_width=True)
-
-    # Venue-Adjusted True SR Evaluator
-    st.markdown("---")
-    st.subheader("🎯 Ground Benchmark Evaluator (True Strike Rate)")
-    st.caption("Compares individual batter performance against historic venue standards for the same phase.")
-
-    venue_df = compute_venue_phase_averages()
-    
-    col_ts1, col_ts2, col_ts3 = st.columns(3)
-    with col_ts1:
-        p_runs = st.number_input("Batter Runs Scored", min_value=1, max_value=150, value=45)
-    with col_ts2:
-        p_balls = st.number_input("Balls Faced", min_value=1, max_value=100, value=25)
-    with col_ts3:
-        p_phase = st.selectbox("Innings Phase", ["Powerplay", "Middle", "Death"], index=2)
-        
-    sr_true = calculate_true_strike_rate("Sample Batter", venue, p_phase, p_runs, p_balls, venue_df)
-    sr_interp = get_sr_true_interpretation(sr_true)
-
-    st.markdown(f"""
-    <div class="info-card">
-        <strong>{sr_interp['badge']} (True SR: {sr_true}x Benchmark)</strong><br>
-        {sr_interp['desc']} (Actual Strike Rate: {round((p_runs/p_balls)*100, 1)}).
-    </div>
-    """, unsafe_allow_html=True)
-
-# ----------------------------------------------------
-# TAB 2: 22-Player Head-to-Head & Matchup Matrix
-# ----------------------------------------------------
-with tab2:
-    with st.expander("ℹ️ How to Read The Tactical Matrix", expanded=False):
-        st.write("""
-        - **11x11 Grid**: Each cell shows how a specific batter fares against a specific bowler (Runs scored, Balls faced, Dismissals, and Strike Rate).
-        - **Color Intensity**: Darker colors highlight higher scoring rates.
-        - **Tactical Alerts**: Automatically flags high-vulnerability matchups where a bowler consistently dominates a batter.
-        """)
-
-    st.subheader("22-Player Tactical Matchup Heatmap & Mismatches")
-
-    team_a_roster = SAMPLE_BATTERS.get(team1, SAMPLE_BATTERS["Chennai Super Kings"])
-    team_b_roster = SAMPLE_BATTERS.get(team2, SAMPLE_BATTERS["Mumbai Indians"])
-
-    h2h_data = get_h2h_matrix(team_a_roster, team_b_roster)
-    heatmap_fig = create_h2h_heatmap(h2h_data, team_a_roster, team_b_roster)
-    st.plotly_chart(heatmap_fig, use_container_width=True)
-
-    st.markdown("---")
-    c_alert, c_radar = st.columns([1, 1])
-    with c_alert:
-        st.subheader("🚨 Key Tactical Mismatch Cards")
-        alerts = get_tactical_alerts(h2h_data, team_a_roster, team_b_roster)
-        if alerts:
-            for alt in alerts[:4]:
-                st.markdown(f"""
-                <div class="alert-card">
-                    <strong>⚠️ High Mismatch Risk</strong>: <strong>{alt['batter']}</strong> vs <strong>{alt['bowler']}</strong><br>
-                    <span style="font-size: 13px; color: #ddd;">
-                    • Record: {alt['runs']} runs off {alt['balls']} balls ({alt['dismissals']} Out)<br>
-                    • Strike Rate: {alt['sr']} (Below Average)<br>
-                    💡 <strong>Tactical Advice:</strong> Introduce {alt['bowler']} when {alt['batter']} comes out to bat.
-                    </span>
-                </div>
-                """, unsafe_allow_html=True)
+# ---------------- Live predictor ----------------
+with tab_live:
+    if chasing:
+        state = scoreboard_state(fmt, target, current, balls_bowled, wickets_lost)
+        if state["runs_needed"] == 0:
+            st.success(f"{batting} have reached the target.")
         else:
-            st.markdown("""
-            <div class="info-card">
-                <strong>✅ Balanced Matchup Profile</strong><br>
-                No extreme individual batter vs bowler vulnerabilities detected in past delivery records.
+            pred = predict_win_probability(fmt, state)
+            mpi = calculate_mpi(state["req_rr"], state["wickets_left"], state["balls_left"], fmt)
+            pressure = get_mpi_interpretation(mpi)
+            favored = batting if pred["chasing_win_pct"] >= 50 else bowling
+            st.markdown(f"""
+            <div class="summary-card">
+                <div style="font-size: 18px; font-weight: bold; color: #38ef7d;">📢 {favored} favoured ({max(pred['chasing_win_pct'], pred['defending_win_pct'])}%)</div>
+                <div style="font-size: 14px; margin-top: 6px; color: #ddd;">
+                    {batting} need <strong>{state['runs_needed']}</strong> off <strong>{state['balls_left']}</strong> balls
+                    (required <strong>{state['req_rr']} RPO</strong>) with <strong>{state['wickets_left']}</strong> wickets in hand.
+                    Pressure: <strong>{pressure['emoji']} {pressure['level']}</strong> — {pressure['desc']}
+                </div>
             </div>
             """, unsafe_allow_html=True)
+            st.caption("The model reads the scoreboard only (runs, balls, wickets, target) — it does not rate the two teams.")
 
-    with c_radar:
-        stats_a = get_phase_radar_stats(team1)
-        stats_b = get_phase_radar_stats(team2)
-        radar_fig = create_phase_radar_chart(team1, stats_a, team2, stats_b)
-        st.plotly_chart(radar_fig, use_container_width=True)
+            c1, c2, c3, c4 = st.columns(4)
+            c1.markdown(f'<div class="metric-badge-team1"><div style="font-size: 13px;">{batting.upper()} (CHASING)</div>'
+                        f'<div style="font-size: 34px; font-weight: 800;">{pred["chasing_win_pct"]}%</div></div>', unsafe_allow_html=True)
+            c2.markdown(f'<div class="metric-badge-team2"><div style="font-size: 13px;">{bowling.upper()} (DEFENDING)</div>'
+                        f'<div style="font-size: 34px; font-weight: 800;">{pred["defending_win_pct"]}%</div></div>', unsafe_allow_html=True)
+            c3.metric("Match pressure", f"{pressure['emoji']} {pressure['level']}", f"MPI {mpi}", delta_color="off")
+            c4.metric("Required rate", f"{state['req_rr']} RPO", f"Current {state['curr_rr']} RPO", delta_color="off")
 
-# ----------------------------------------------------
-# TAB 3: Monte Carlo Match Simulator & What-If Sandbox
-# ----------------------------------------------------
-with tab3:
-    with st.expander("ℹ️ What is a Monte Carlo Simulation?", expanded=False):
-        st.write("""
-        Instead of guessing the outcome, a **Monte Carlo Simulation** uses computer algorithms to play out the rest of the match **10,000 times ball-by-ball**, taking into account realistic boundary hit rates, dot balls, and wicket risks.
-        - **Why it helps**: It shows the most likely score range (90% confidence interval) and allows captains/analysts to test 'What-If' strategies before making live decisions!
-        """)
+            left, right = st.columns(2)
+            left.plotly_chart(create_win_prob_donut(batting, pred["chasing_win_pct"], bowling, pred["defending_win_pct"]), width="stretch")
+            right.plotly_chart(create_shap_bar_chart(pred["shap_impacts"]), width="stretch")
+    else:
+        projected = project_first_innings_score(fmt, current, balls_bowled, wickets_lost)
+        sim = simulate_what_if_scenario(fmt, None, current, total_balls(fmt) - balls_bowled, 10 - wickets_lost,
+                                        "Baseline Tactic", batting_team=batting)["baseline"]
+        st.markdown(f"""
+        <div class="summary-card">
+            <div style="font-size: 18px; font-weight: bold; color: #38ef7d;">📢 {batting} are heading for about {projected}</div>
+            <div style="font-size: 14px; margin-top: 6px; color: #ddd;">{current}/{wickets_lost} after {overs} overs. The ML model projects {projected};
+            a Monte Carlo simulation using {batting}'s recent scoring puts the likely range at {sim['ci_10th']:.0f}–{sim['ci_90th']:.0f}.</div>
+        </div>
+        """, unsafe_allow_html=True)
+        c1, c2, c3 = st.columns(3)
+        c1.metric("ML projected total", projected)
+        c2.metric("Simulated likely range", f"{sim['ci_10th']:.0f} – {sim['ci_90th']:.0f}", "10th–90th percentile", delta_color="off")
+        c3.metric("Current run rate", f"{current / max(balls_bowled, 1) * 6:.2f} RPO")
 
-    st.subheader("🎲 10,000-Match Computer Simulation & 'What-If' Scenario Tester")
+# ---------------- Player matchups ----------------
+with tab_matchups:
+    st.caption(f"{batting} batters vs {bowling} bowlers — XIs from their latest {fmt} meeting, records across all {fmt} internationals. "
+               "Change \"Batting side\" to flip.")
+    mu = xi_matchup(batting, bowling, fmt)
+    st.plotly_chart(create_h2h_heatmap(mu["matrix"], mu["batters"], mu["bowlers"], batting, bowling), width="stretch")
+    st.subheader("🚨 Matchups where the bowler has dominated")
+    if mu["alerts"]:
+        for col, a in zip(st.columns(3) * 2, mu["alerts"][:6]):
+            col.markdown(f"""<div class="alert-card"><strong>{a['bowler']}</strong> vs <strong>{a['batter']}</strong><br>
+                {a['runs']} runs off {a['balls']} balls • {a['dismissals']} dismissals • SR {a['sr']}</div>""", unsafe_allow_html=True)
+    else:
+        st.info("No bowler has a dominant record (12+ balls) against these batters.")
 
-    col_sim1, col_sim2 = st.columns([1, 2])
-    with col_sim1:
-        n_sims = st.slider("Simulated Matches Count", min_value=1000, max_value=10000, value=5000, step=1000)
-        tactic_choice = st.selectbox(
-            "Test a 'What-If' Tactical Strategy", 
-            ["Baseline Tactic", "Deploy Death Specialist Bowler", "Promote Power Hitter Batter"]
-        )
-        
-        sim_results = simulate_what_if_scenario(
-            target_score, current_score, balls_remaining, wickets_remaining, tactic_choice
-        )
-        
-        st.markdown("### 📊 Simulation Findings in Simple Terms")
-        baseline = sim_results["baseline"]
-        tactic = sim_results["tactical"]
-        
-        st.metric(
-            label="Simulated Win Probability", 
-            value=f"{tactic['simulated_win_pct']}%", 
-            delta=f"{tactic['simulated_win_pct'] - baseline['simulated_win_pct']:+.1f}% vs Standard Strategy"
-        )
-        st.metric(
-            label="Expected Final Score", 
-            value=f"{tactic['mean_score']} runs", 
-            delta=f"{tactic['mean_score'] - baseline['mean_score']:+.1f} runs"
-        )
-        st.metric(
-            label="90% Score Range (Most Likely)", 
-            value=f"{tactic['ci_10th']} to {tactic['ci_90th']} runs"
-        )
-        
-        st.info(f"💡 **Plain English Summary**: {sim_results['impact_summary']}")
+# ---------------- Simulator ----------------
+with tab_sim:
+    left, right = st.columns([1, 2])
+    with left:
+        tactic = st.selectbox("What-if strategy", list(TACTICS))
+        n_sims = st.select_slider("Simulations", [1000, 5000, 10000], value=5000)
+        use_profile = st.checkbox("Use batting side's last-3-years scoring profile", value=True)
+        res = simulate_what_if_scenario(fmt, target, current, total_balls(fmt) - balls_bowled, 10 - wickets_lost,
+                                        tactic, n_sims, batting if use_profile else None)
+        base, tac = res["baseline"], res["tactical"]
+        is_baseline = tactic == "Baseline Tactic"
+        if chasing:
+            st.metric(f"{batting} chase win chance", f"{tac['simulated_win_pct']}%",
+                      None if is_baseline else f"{tac['simulated_win_pct'] - base['simulated_win_pct']:+.1f} pts vs baseline")
+        st.metric("Expected final score", tac["mean_score"],
+                  None if is_baseline else f"{tac['mean_score'] - base['mean_score']:+.1f} vs baseline")
+        st.metric("Likely range (10th–90th pct)", f"{tac['ci_10th']:.0f} – {tac['ci_90th']:.0f}")
+        st.info(f"💡 {res['impact_summary']}")
+    with right:
+        st.plotly_chart(create_monte_carlo_hist(tac, batting, target), width="stretch")
 
-    with col_sim2:
-        hist_fig = create_monte_carlo_hist(tactic)
-        st.plotly_chart(hist_fig, use_container_width=True)
+# ---------------- Player styles ----------------
+with tab_styles:
+    clusters, info = cluster_batters(fmt)
+    st.caption(f"KMeans (k={info['k']}) on {info['players']} {fmt} batters with {info['min_balls']}+ balls faced, using strike rate, "
+               f"average, boundary %, dot-ball % and the share of balls faced in the powerplay and death overs. "
+               f"Silhouette score {info['silhouette']}. {team_a} and {team_b} players are outlined.")
+    st.plotly_chart(create_cluster_scatter(clusters, {team_a, team_b}), width="stretch")
+    focus = clusters[clusters["team"].isin([team_a, team_b])].sort_values("runs", ascending=False).head(40)
+    st.dataframe(focus[["player", "team", "style", "runs", "strike_rate", "average", "boundary_pct", "powerplay_share", "death_share"]]
+                 .round(2), hide_index=True, width="stretch")
 
-# ----------------------------------------------------
-# TAB 4: Auction Recommendations & REST API Docs
-# ----------------------------------------------------
-with tab4:
-    st.subheader("💰 Smart Player Auction Recommendations & Developer API")
+# ---------------- Model report ----------------
+with tab_models:
+    report = model_report().get(fmt)
+    if not report:
+        st.warning("No trained models; run `python -m src.pipeline`.")
+    else:
+        win, score, clus = report["win_probability"], report["score_projection"], report["batter_clusters"]
+        st.subheader(f"1. {win['task']}")
+        st.caption(f"Trained on {win['train_matches']:,} matches ({win['train_rows']:,} ball states); tested on the "
+                   f"{win['test_matches']} most recent matches from {win['test_from']} onward. Selected: {win['selected']} (XGBoost must beat the baseline by >0.005 log loss).")
+        st.dataframe(pd.DataFrame(win["models"]).T, width="stretch")
+        st.plotly_chart(create_calibration_chart(win["calibration"], win["selected"], fmt), width="stretch")
 
-    col_auc, col_api = st.columns([1, 1])
+        st.subheader(f"2. {score['task']}")
+        st.caption(f"Trained on {score['train_matches']:,} first innings; tested on {score['test_matches']} recent ones. "
+                   f"Errors in runs. Selected: {score['selected']} (lowest test MAE).")
+        st.dataframe(pd.DataFrame(score["models"]).T, width="stretch")
 
-    with col_auc:
-        st.markdown("### 🏷️ Target Auction Player Recommendations")
-        st.caption("Predicts player auction market values based on phase performance metrics.")
-        gap_type = st.radio("Team Vulnerability Need", ["Death Bowling", "Spin Hitter", "All-Round Depth"], index=0)
-        rec_df = get_auction_recommendations(team1, gap_type)
-        st.dataframe(
-            rec_df.style.format({
-                "Base_Price_Cr": "₹{:.1f} Cr",
-                "Predicted_Value_Cr": "₹{:.1f} Cr",
-                "Impact_Score": "{:d}/100"
-            }).background_gradient(subset=["Impact_Score"], cmap="Greens"),
-            use_container_width=True
-        )
+        st.subheader(f"3. {clus['task']}")
+        st.caption(f"{clus['players']} batters, k={clus['k']}, silhouette {clus['silhouette']}.")
+        st.dataframe(pd.DataFrame(clus["clusters"]), hide_index=True, width="stretch")
 
-    with col_api:
-        st.markdown("### ⚡ Developer API Endpoints")
-        st.markdown("""
-        All predictive models and simulations are accessible via REST API (`src/api.py`).
-        
-        - **`GET /docs`**: Interactive Swagger API Playground
-        - **`GET /health`**: Health Check
-        - **`POST /api/v1/predict-win-prob`**: Win Probability API
-        - **`POST /api/v1/simulate-match`**: Monte Carlo Simulator API
-        """)
-        st.success("🔗 Run `uvicorn src.api:app --reload` to access API docs at `http://localhost:8000/docs`.")
-
-# Footer
 st.markdown("---")
-st.caption("IPL Edge Analytics Platform • Human-Centered Cricket Decision Support System")
+st.caption("Data: [Cricsheet](https://cricsheet.org) • API: `uvicorn src.api:app` → /docs")
